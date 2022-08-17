@@ -20,8 +20,10 @@ func findSample(body []byte) (input [][]byte, output [][]byte, err error) {
 		// For each item found, get the title
 		inputCase := ""
 		s.Find("pre").Contents().Each(func(_ int, s1 *goquery.Selection) {
-			//fmt.Println(s1.Text())
-			inputCase += s1.Text() + "\n"
+            c := strings.TrimSuffix(s1.Text(), "\n")
+            if c != "" {
+                inputCase += c + "\n"
+            }
 		})
 		for strings.HasSuffix(inputCase, "\n\n") {
 			inputCase = inputCase[:len(inputCase)-1]
@@ -32,14 +34,15 @@ func findSample(body []byte) (input [][]byte, output [][]byte, err error) {
 		// For each item found, get the title
 		outputCase := ""
 		s.Find("pre").Contents().Each(func(_ int, s1 *goquery.Selection) {
-			//fmt.Println(s1.Text())
-			outputCase += s1.Text() + "\n"
+            c := strings.TrimSuffix(s1.Text(), "\n")
+            if c != "" {
+                outputCase += c + "\n"
+            }
 		})
 		for strings.HasSuffix(outputCase, "\n\n") {
 			outputCase = outputCase[:len(outputCase)-1]
 		}
 		output = append(output, []byte(outputCase))
-
 	})
 
 	return
