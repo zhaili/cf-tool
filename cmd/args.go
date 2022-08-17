@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"regexp"
 
+	"cf-tool/client"
+	"cf-tool/config"
 	"github.com/docopt/docopt-go"
-	"github.com/xalanq/cf-tool/client"
-	"github.com/xalanq/cf-tool/config"
 )
 
 // ParsedArgs parsed arguments

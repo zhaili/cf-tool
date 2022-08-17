@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/xalanq/cf-tool/client"
+	"cf-tool/client"
 )
 
 // Pull command

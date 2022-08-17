@@ -1,6 +1,8 @@
 package client
 
 import (
+	"cf-tool/cookiejar"
+	"cf-tool/util"
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/md5"
@@ -8,15 +10,12 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
+	"github.com/fatih/color"
+	"golang.org/x/crypto/ssh/terminal"
 	"io"
 	"net/url"
 	"regexp"
 	"syscall"
-
-	"github.com/fatih/color"
-	"github.com/xalanq/cf-tool/cookiejar"
-	"github.com/xalanq/cf-tool/util"
-	"golang.org/x/crypto/ssh/terminal"
 )
 
 // genFtaa generate a random one

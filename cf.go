@@ -5,12 +5,13 @@ import (
 	"os"
 	"strings"
 
+	"cf-tool/client"
+	"cf-tool/cmd"
+	"cf-tool/config"
+
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
 	"github.com/mitchellh/go-homedir"
-	"github.com/xalanq/cf-tool/client"
-	"github.com/xalanq/cf-tool/cmd"
-	"github.com/xalanq/cf-tool/config"
 
 	docopt "github.com/docopt/docopt-go"
 )
