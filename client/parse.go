@@ -52,16 +52,19 @@ func findSample(body []byte) (input [][]byte, output [][]byte, err error) {
 func (c *Client) ParseProblem(URL, path string, mu *sync.Mutex) (samples int, standardIO bool, err error) {
 	body, err := util.GetBody(c.client, URL)
 	if err != nil {
+		color.Red(err.Error())
 		return
 	}
 
 	_, err = findHandle(body)
 	if err != nil {
+		color.Red(err.Error())
 		return
 	}
 
 	input, output, err := findSample(body)
 	if err != nil {
+		color.Red(err.Error())
 		return
 	}
 
