@@ -1,4 +1,4 @@
-module cf-tool
+module github.com/zhaili/cf-tool
 
 go 1.18
 
